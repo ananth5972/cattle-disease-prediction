@@ -33,16 +33,16 @@ def predict(image_bytes):
 
 # Mapping predictions to disease descriptions and treatments
 def get_disease_description(predicted_label):
-    if predicted_label == 0:
-        return "Foot And Mouth Disease", "Treatment: Clean the area and consult a vet."
+  if predicted_label == 0:
+        return ("Foot And Mouth Disease", "Treatment recommendation: Clean the infected area with antiseptic solution, then apply Zinc Oxide ointment or Gentian Violet on the sores. Consult a vet for additional antibiotic treatment like Penicillin or Streptomycin.")
     elif predicted_label == 1:
-        return "Infectious Bovine Keratoconjunctivitis", "Treatment: Use eye ointment and antibiotics."
+        return ("Infectious Bovine Keratoconjunctivitis", "Treatment recommendation: Use antibiotic eye ointment like Oxytetracycline or Terramycin. In severe cases, administer intramuscular antibiotics such as Tylosin or LA-200.")
     elif predicted_label == 2:
-        return "Lumpy Skin Disease", "Treatment: Apply ointments and take antibiotics."
+        return ("Lumpy Skin Disease", "Treatment recommendation: Administer anti-inflammatory drugs and antibiotics like Oxytetracycline to prevent secondary infections. Apply wound care ointments like Iodine or Zinc Oxide on the skin lesions.")
     elif predicted_label == 3:
-        return "Healthy", "No treatment needed."
+        return ("Healthy", "No treatment needed.")
     else:
-        return "Unknown Disease", "No treatment available."
+        return ("Unknown Disease", "No recommendation available")
 
 # Streamlit app layout
 st.title('Cattle Disease Prediction')
